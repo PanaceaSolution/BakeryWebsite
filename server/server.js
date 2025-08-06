@@ -8,6 +8,7 @@ import orderRoute from "./routes/order/orderRoute.js";
 import reviewRoute from "./routes/review/reviewRoute.js";
 import faqRoute from "./routes/faq/faqRoute.js";
 import categoryRoute from "./routes/category/categoryRoute.js";
+import customeCakeRoute from "./routes/customCakeOrderRoute/customeCakeRoute.js";
 
 const app = express();
 dotenv.config();
@@ -24,6 +25,7 @@ app.use("/api/v1", orderRoute);
 app.use("/api/v1", reviewRoute);
 app.use("/api/v1", faqRoute);
 app.use("/api/v1", categoryRoute);
+app.use("/api/v1", customeCakeRoute);
 
 const PORT = process.env.PORT || 5000;
 
