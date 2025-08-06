@@ -2,6 +2,7 @@ import FaqAccordion from "@/components/features/faq/FAQAccordin";
 
 import HeroSection from "@/components/features/herosection/HeroSection";
 import Banner from "@/components/features/shared/banner/Banner";
+import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -84,6 +85,7 @@ export default function Home() {
           buttonLink="/birthday-cakes"
         />
         <FaqAccordion/>
+        <SubscribeSection/>
        
       </div>
     
