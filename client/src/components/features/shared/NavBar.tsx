@@ -8,12 +8,12 @@ import { FiSearch, FiShoppingCart, FiUser, FiMenu, FiX } from "react-icons/fi";
 function NavBar() {
     const navLinks = [
         { label: "Home", url: "/" },
-        { label: "About Us", url: "/about-us" },
+        { label: "About Us", url: "/#about-us" },
         { label: "Shop", url: "/shop" },
-        { label: "Customize your Cake", url: "/customize" },
+        { label: "Customize your Cake", url: "/#customize" },
         { label: "Bakery Items", url: "/bakery-items" },
-        { label: "FAQs", url: "/faqs" },
-        { label: "Contact Us", url: "/contact" },
+        { label: "FAQs", url: "/#faqs" },
+        { label: "Contact Us", url: "/#contact" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);
