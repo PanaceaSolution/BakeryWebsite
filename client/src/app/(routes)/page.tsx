@@ -1,9 +1,16 @@
-import React from 'react'
+import FaqAccordion from "@/components/features/faq/FAQAccordin";
 
-function page() {
+import HeroSection from "@/components/features/herosection/HeroSection";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+
+export default function Home() {
   return (
-    <div>page</div>
-  )
+   
+      <div>  
+        <HeroSection/>
+        <FaqAccordion/>
+      </div>
+    
+  );
 }
-
-export default page

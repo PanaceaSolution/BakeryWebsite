@@ -17,7 +17,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ slug }) => {
     queryFn: () => fetchBanner(slug),
   })
 
-  // ✅ Create internal ref
+
   const customizeRef = useRef<HTMLDivElement | null>(null)
 
   if (isLoading)
