@@ -67,7 +67,9 @@ export const getProductById = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await prisma.product.findUnique({
-      where: { id: parseInt(id) },
+      where: {
+        id,
+      },
     });
 
     if (!product) {
@@ -97,15 +99,13 @@ export const updateProduct = async (req, res) => {
       isFeatured,
     } = req.body;
 
-    const product = await prisma.product.findUnique({
-      where: { id: parseInt(id) },
-    });
+    const product = await prisma.product.findUnique({ where: { id } });
 
     if (!product) {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    if (price && (isNaN(price) || parseFloat(price) <= 0)) {
+    if (price !== undefined && (isNaN(price) || parseFloat(price) <= 0)) {
       return res
         .status(400)
         .json({ message: "Price must be a valid number greater than 0" });
@@ -121,11 +121,11 @@ export const updateProduct = async (req, res) => {
     }
 
     const updatedProduct = await prisma.product.update({
-      where: { id: parseInt(id) },
+      where: { id },
       data: {
-        name,
-        description,
-        price: price ? parseFloat(price) : product.price,
+        name: name ?? product.name,
+        description: description ?? product.description,
+        price: price !== undefined ? parseFloat(price) : product.price,
         categoryId: categoryId ?? product.categoryId,
         images: images ?? product.images,
         tags: tags ?? product.tags,
@@ -148,7 +148,9 @@ export const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const product = await prisma.product.findUnique({
-      where: { id: parseInt(id) },
+      where: {
+        id,
+      },
     });
 
     if (!product) {
@@ -156,7 +158,9 @@ export const deleteProduct = async (req, res) => {
     }
 
     await prisma.product.delete({
-      where: { id: parseInt(id) },
+      where: {
+        id,
+      },
     });
 
     res.status(200).json({
