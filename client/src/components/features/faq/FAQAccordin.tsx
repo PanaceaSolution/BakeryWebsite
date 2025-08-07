@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { faqs } from '@/lib/api/faq';
-import TextBlock from './TextBlock';
+import TextBlock from '../shared/textblock/TextBlock';
 
 const FaqAccordion = () => {
   const [openIndices, setOpenIndices] = useState<number[]>([]);
