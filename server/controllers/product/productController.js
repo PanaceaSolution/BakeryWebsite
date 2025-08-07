@@ -171,3 +171,31 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ message: "Server error", error: error.message });
   }
 };
+
+export const getProductsByCategory = async (req, res) => {
+  try {
+    const { slug } = req.params;
+    console.log("Fetching products for category:", slug);
+    if (!slug) {
+      return res.status(400).json({
+        message: "Category slug is required",
+      });
+    }
+    const category = await prisma.category.findFirst({
+      where: { slug },
+      include: { products: true },
+    });
+    if (!category) {
+      return res.status(404).json({
+        message: "incorrect Slug or Category not found",
+      });
+    }
+    res.status(200).json({
+      message: "Products fetched successfully",
+      products: category.products,
+    });
+  } catch (error) {
+    console.error("Error fetching products by category:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+};
