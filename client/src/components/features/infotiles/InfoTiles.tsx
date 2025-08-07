@@ -16,9 +16,10 @@ const InfoTiles = () => {
           heading="Sweet Delivery, Right On Time"
           subheading="Enjoy freshly baked happiness delivered straight to your doorstep — safe, fast, and always on time."
         />
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-6 mt-6"
-        >
+        
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-6 mt-6 justify-items-center">
+
+        
           <InfoTileCard
             icon={BsCheckCircleFill}
             title="Free Delivery"
