@@ -1,6 +1,7 @@
 
 import DeliveryInfoContainer from "@/components/features/deliveryinfo/DeliveryInfoContainer";
 import FaqAccordion from "@/components/features/faq/FAQAccordin";
+import Footer from "@/components/features/footer/Footer";
 
 import HeroSection from "@/components/features/herosection/HeroSection";
 import InfoTiles from "@/components/features/infotiles/InfoTiles";
@@ -91,6 +92,7 @@ export default function Home() {
        <DeliveryInfoContainer/>
         <FaqAccordion/>
         <SubscribeSection/>
+        <Footer/>
        
       </div>
     
