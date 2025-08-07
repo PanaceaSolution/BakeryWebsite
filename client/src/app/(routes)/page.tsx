@@ -1,3 +1,5 @@
+
+import DeliveryInfoContainer from "@/components/features/deliveryinfo/DeliveryInfoContainer";
 import FaqAccordion from "@/components/features/faq/FAQAccordin";
 
 import HeroSection from "@/components/features/herosection/HeroSection";
@@ -86,6 +88,7 @@ export default function Home() {
           buttonLink="/birthday-cakes"
         />
         <InfoTiles/>
+       <DeliveryInfoContainer/>
         <FaqAccordion/>
         <SubscribeSection/>
        
