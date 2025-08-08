@@ -40,7 +40,7 @@ const SliderSection: React.FC = () => {
   };
 
   return (
-    <section className="relative flex items-center w-full">
+    <section className="relative flex items-center w-full mb-6">
       {/* Left Arrow */}
       <button
         onClick={() => scroll("left")}
@@ -52,7 +52,7 @@ const SliderSection: React.FC = () => {
       {/* Scrollable Section */}
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto gap-4 sm:gap-6 md:gap-11 px-4 sm:px-6 md:px-8 py-4 w-[95%] ml-6 sm:ml-7 hide-scrollbar"
+        className="flex overflow-x-auto gap-4 sm:gap-6 md:gap-12 px-4 sm:px-6 md:px-8 py-4 w-[95%] ml-6 sm:ml-7 hide-scrollbar"
       >
         {cakes.map((cake,index) => (
           <div

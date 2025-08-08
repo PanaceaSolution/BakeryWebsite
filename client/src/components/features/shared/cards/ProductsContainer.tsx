@@ -5,95 +5,30 @@ import ProductCard from './ProductCards'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 
+export interface Product {
+    id: string;
+    name: string;
+    description: string;
+    price: string | number; // if you want to treat price as a number, change this to number
+    images: string[]; // if images are objects, you can update this accordingly
+    tags: string[];
+    available: boolean;
+    isFeatured: boolean;
+    createdAt: string; // or Date if parsed
+    categoryId: string |null;
+}
 interface IProps {
     title: string
     subTitle: string
     link: string
+    data: Product[];
 }
 
-const data = [
-    {
-        id: 'cake001',
-        name: 'Chocolate Truffle Cake',
-        description: 'Rich and moist chocolate cake layered with dark chocolate ganache.',
-        price: 1200,
-        category: 'Chocolate cake',
-        tags: ['truffle', 'dark chocolate', 'rich'],
-        images: [
-            'https://example.com/images/cakes/chocolate_truffle_1.jpg',
-            'https://example.com/images/cakes/chocolate_truffle_2.jpg',
-        ],
-        isFeatured: true,
-        available: true,
-        createdAt: '2025-07-01T08:00:00Z',
-    },
-    {
-        id: 'cake001',
-        name: 'Chocolate Truffle Cake',
-        description: 'Rich and moist chocolate cake layered with dark chocolate ganache.',
-        price: 1200,
-        category: 'Chocolate cake',
-        tags: ['truffle', 'dark chocolate', 'rich'],
-        images: [
-            'https://example.com/images/cakes/chocolate_truffle_1.jpg',
-            'https://example.com/images/cakes/chocolate_truffle_2.jpg',
-        ],
-        isFeatured: true,
-        available: true,
-        createdAt: '2025-07-01T08:00:00Z',
-    },
-    {
-        id: 'cake001',
-        name: 'Chocolate Truffle Cake',
-        description: 'Rich and moist chocolate cake layered with dark chocolate ganache.',
-        price: 1200,
-        category: 'Chocolate cake',
-        tags: ['truffle', 'dark chocolate', 'rich'],
-        images: [
-            'https://example.com/images/cakes/chocolate_truffle_1.jpg',
-            'https://example.com/images/cakes/chocolate_truffle_2.jpg',
-        ],
-        isFeatured: true,
-        available: true,
-        createdAt: '2025-07-01T08:00:00Z',
-    },
-    {
-        id: 'cake001',
-        name: 'Chocolate Truffle Cake',
-        description: 'Rich and moist chocolate cake layered with dark chocolate ganache.',
-        price: 1200,
-        category: 'Chocolate cake',
-        tags: ['truffle', 'dark chocolate', 'rich'],
-        images: [
-            'https://example.com/images/cakes/chocolate_truffle_1.jpg',
-            'https://example.com/images/cakes/chocolate_truffle_2.jpg',
-        ],
-        isFeatured: true,
-        available: true,
-        createdAt: '2025-07-01T08:00:00Z',
-    },
-    {
-        id: 'cake001',
-        name: 'Chocolate Truffle Cake',
-        description: 'Rich and moist chocolate cake layered with dark chocolate ganache.',
-        price: 1200,
-        category: 'Chocolate cake',
-        tags: ['truffle', 'dark chocolate', 'rich'],
-        images: [
-            'https://example.com/images/cakes/chocolate_truffle_1.jpg',
-            'https://example.com/images/cakes/chocolate_truffle_2.jpg',
-        ],
-        isFeatured: true,
-        available: true,
-        createdAt: '2025-07-01T08:00:00Z',
-    },
-]
-
-const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link }) => {
+const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }) => {
     const router = useRouter()
 
     return (
-        <div className="flex flex-col gap-10 mx-4 sm:mx-6 lg:mx-9">
+        <div className="flex flex-col gap-10 mx-4 sm:mx-6 lg:mx-9 mb-15">
             {/* Header */}
             <div className="flex flex-col gap-2 w-full">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -124,7 +59,7 @@ const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link }) => {
                         <ProductCard
                             key={index}
                             name={item.name}
-                            price={item.price}
+                            price={item.price as number}
                             images={item.images}
                         />
                     ))}
