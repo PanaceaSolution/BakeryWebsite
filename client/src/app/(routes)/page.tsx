@@ -1,14 +1,10 @@
 import DeliveryInfoContainer from "@/components/features/deliveryinfo/DeliveryInfoContainer";
 import FaqAccordion from "@/components/features/faq/FAQAccordin";
-import Footer from "@/components/features/footer/Footer";
 
 import HeroSection from "@/components/features/herosection/HeroSection";
 import InfoTiles from "@/components/features/infotiles/InfoTiles";
 import Banner from "@/components/features/shared/banner/Banner";
 import HomeProductsComponent from "@/components/features/shared/cards/ProductsContainer";
-import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
 //dynamically data will be fetched here
 const data = {
@@ -144,7 +140,7 @@ export default function Home() {
         buttonText="Shop Birthday Cakes"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Birthday Cakes - Make Their Day Memorable"} subTitle="Free candles and message card on all birthday cakes" link="/category/" data={data.products} />
 
       {/* Second Banner */}
       <Banner
@@ -154,7 +150,7 @@ export default function Home() {
         buttonText="Order Limited Edition Now"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Modal Cakes - Trendiest Cakes in Town"} subTitle="Bold shapes. Artistic finishes. Limited-edition cakes for trendsetters and taste-makers." link="/category/" data={data.products} />
 
 
       {/* Third Banner */}
@@ -166,7 +162,7 @@ export default function Home() {
         buttonText="Design Your Dream Cake"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Wedding Cakes - Say ‘I Do’ with Sweetness 💍"} subTitle="Elegant, handcrafted wedding cakes made to match the beauty of your big day." link="/category/" data={data.products} />
 
       <Banner
         image="/assets/HeroSection/four.png"
@@ -175,7 +171,7 @@ export default function Home() {
         buttonText="Celebrate with Cakes"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Baby Shower Cakes - Cakes for the Cutest Celebration"} subTitle="Charming designs, soft pastel colors, and sweet details made for the little one on the way." link="/category/" data={data.products} />
 
       {/* Fourth Banner */}
       <Banner
@@ -185,7 +181,7 @@ export default function Home() {
         buttonText="Shop Pasteries Now !"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Pastries- Tiny Treats, Big Joys"} subTitle="Craving something sweet? Explore our handcrafted pastries." link="/category/" data={data.products} />
 
       {/* Fifth Banner */}
       <Banner
@@ -195,7 +191,7 @@ export default function Home() {
         buttonText="Order Fresh Bakes"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
+      <HomeProductsComponent title={"Bakery Items - Baked to Perfection"} subTitle="Where tradition meets taste — discover our premium bakery range crafted with love and skill." link="/category/" data={data.products} />
 
       {/*Sixth Banner*/}
 
@@ -207,7 +203,6 @@ export default function Home() {
         buttonText="Create Your Cake Now"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
 
       {/*Seventh Banner*/}
       <Banner
@@ -217,13 +212,10 @@ export default function Home() {
         buttonText="Schedule a Delivery"
         buttonLink="/birthday-cakes"
       />
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
 
       <InfoTiles />
       <DeliveryInfoContainer />
       <FaqAccordion />
-      <SubscribeSection />
-      <Footer />
 
     </div>
 

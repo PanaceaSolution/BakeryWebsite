@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import Provider from "@/utils/providers";
 import NavBar from "@/components/features/shared/NavBar";
 import SliderSection from "@/components/features/home/Sliders/SliderSection";
+import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
+import Footer from "@/components/features/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,6 +36,8 @@ export default function RootLayout({
           <NavBar />
           <SliderSection />
           {children}
+          <SubscribeSection />
+          <Footer />
         </Provider>
       </body>
     </html>
