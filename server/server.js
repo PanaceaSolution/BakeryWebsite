@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
+import { sanitizePostData } from "./middleware/sanitizeMiddleware.js";
 
 import productRoute from "./routes/product/productRoute.js";
 import orderRoute from "./routes/order/orderRoute.js";
@@ -18,6 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(helmet());
+app.use(sanitizePostData);
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
