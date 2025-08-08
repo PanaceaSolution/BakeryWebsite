@@ -3,7 +3,7 @@ import { Product } from "@/types/CakeTypes";
 import { AddProduct, DelProduct, UpdateProduct } from "@/utils/api/CakesApi";
 import toast from "react-hot-toast";
 
-// ✅ Add new product
+// Add new product
 export const useAddProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
@@ -16,7 +16,7 @@ export const useAddProduct = () => {
     });
 };
 
-// ✅ Update existing product
+// Update existing product
 export const useUpdateProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
@@ -30,7 +30,7 @@ export const useUpdateProduct = () => {
     });
 };
 
-// ✅ Delete product
+// Delete product
 export const useDeleteProduct = () => {
     const queryClient = useQueryClient();
     return useMutation({
