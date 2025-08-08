@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Product {
+  id          String    @id @default(uuid())
+  name        String
+  description String
+  price       Decimal   @db.Decimal(10, 2)
+  images      String[]
+  tags        String[]
+  available   Boolean   @default(true)
+  isFeatured  Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  categoryId    String?
+  category    Category?  @relation(fields: [categoryId], references: [id])
+  cartItems   CartItem[]
+}
+
+model Category {
+  id        String    @id @default(uuid())
+  name      String
+  slug      String
+  categoryImage   String
+  description     Json
+  image     String
+  createdAt DateTime  @default(now())
+
+  products  Product[] // Relation: one-to-many
+}
+
+enum CustomCakeStatus {
+  pending
+  in_progress
+  completed
+  cancelled
+}
+
+enum PaymentStatus {
+  pending
+  paid
+  failed
+}
+
+enum PaymentMethod {
+  COD
+  Khalti
+  eSewa
+}
+
+enum OrderStatuses {
+  pending
+  processing
+  dispatched
+  delivered
+  cancelled
+}
+
+model CustomCakeOrder {
+  id            String           @id @default(uuid())
+  userId        String           // Will link to User later
+  shape         String
+  flavor        String
+  size          String
+  theme         String?
+  messageOnCake String?
+  imageUpload   String?
+  deliveryDate  DateTime
+  address       String
+  status        CustomCakeStatus @default(pending)
+  createdAt     DateTime         @default(now())
+}
+
+model CartItem {
+  id         String    @id @default(uuid())
+  userEmail  String
+  productId  String
+  quantity   Int
+  createdAt  DateTime  @default(now())
+
+  product    Product   @relation(fields: [productId], references: [id])
+}
+
+model Order {
+  id              String         @id @default(uuid())
+  userId          String         // Will link to User later
+  orderItems      String[]       // Consider using a relation model if normalized
+  totalAmount     Int
+  paymentStatus   PaymentStatus  @default(pending)
+  paymentMethod   PaymentMethod  @default(COD)
+  deliveryAddress String
+  orderStatus     OrderStatuses    @default(pending)
+  createdAt       DateTime       @default(now())
+
+  payments        Payment[]
+}
+
+model Payment {
+  id            String         @id @default(uuid())
+  orderId       String
+  method        PaymentMethod  @default(COD)
+  transactionId String
+  status        PaymentStatus  @default(pending)
+  amount        Int
+  createdAt     DateTime       @default(now())
+
+  order         Order          @relation(fields: [orderId], references: [id])
+}
+
+model Review {
+  id         String    @id @default(uuid())
+  userId     String    // Will link to User later
+  message    String
+  rating     Int
+  image      String
+  isApproved Boolean
+  createdAt  DateTime  @default(now())
+}
+
+model Faq {
+  id        String    @id @default(uuid())
+  question  String
+  answer    String
+  createdAt DateTime  @default(now())
+}
