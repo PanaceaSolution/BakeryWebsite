@@ -2,6 +2,8 @@ import express from "express";
 
 import dotenv from "dotenv";
 import cors from "cors";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 
 import productRoute from "./routes/product/productRoute.js";
 import orderRoute from "./routes/order/orderRoute.js";
@@ -15,6 +17,14 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(helmet());
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+  message: "Too many requests, please try again later.",
+});
+app.use(limiter);
 
 app.get("/", (req, res) => {
   res.send("Hello!! Server is Here!!");

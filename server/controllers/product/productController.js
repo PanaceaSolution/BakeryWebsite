@@ -175,7 +175,7 @@ export const deleteProduct = async (req, res) => {
 export const getProductsByCategory = async (req, res) => {
   try {
     const { slug } = req.params;
-    console.log("Fetching products for category:", slug);
+    // console.log("Fetching products for category:", slug);
     if (!slug) {
       return res.status(400).json({
         message: "Category slug is required",
