@@ -3,7 +3,7 @@ import React from 'react';
 const FooterNewsletter: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add your submit logic here
+    //  submit logic here
   };
 
   return (
