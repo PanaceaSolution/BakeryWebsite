@@ -3,7 +3,6 @@ import FaqAccordion from "@/components/features/faq/FAQAccordin";
 import Footer from "@/components/features/footer/Footer";
 
 import HeroSection from "@/components/features/herosection/HeroSection";
-import SliderSection from "@/components/features/home/Sliders/SliderSection";
 import InfoTiles from "@/components/features/infotiles/InfoTiles";
 import Banner from "@/components/features/shared/banner/Banner";
 import HomeProductsComponent from "@/components/features/shared/cards/ProductsContainer";
@@ -135,7 +134,6 @@ export default function Home() {
 
     <div>
       <HeroSection />
-      <SliderSection />
       <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="/category/" data={data.products} />
 
       {/* First Banner */}

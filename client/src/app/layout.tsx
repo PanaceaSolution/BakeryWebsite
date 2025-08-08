@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Provider from "@/utils/providers";
 import NavBar from "@/components/features/shared/NavBar";
+import SliderSection from "@/components/features/home/Sliders/SliderSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Provider>
           <NavBar />
+          <SliderSection />
           {children}
         </Provider>
       </body>
