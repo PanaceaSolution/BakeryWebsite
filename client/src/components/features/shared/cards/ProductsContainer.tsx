@@ -16,16 +16,16 @@ export interface Product {
     isFeatured: boolean;
     createdAt: string;
     categoryId: string | null;
-    discount?: string
 }
 interface IProps {
     title: string
     subTitle: string
     link?: string
-    data: Product[];
+    data: Product[]
+    discount?: boolean
 }
 
-const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }) => {
+const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data, discount }) => {
     const router = useRouter()
 
     return (
@@ -59,7 +59,7 @@ const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }
                     {data.map((item, index) => (
                         <ProductCard
                             key={index}
-                            isDiscounted={false}
+                            isDiscounted={discount}
                             name={item.name}
                             price={item.price as number}
                             images={item.images}

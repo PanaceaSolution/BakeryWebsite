@@ -129,7 +129,7 @@ export default function Home() {
   return (
 
     <div>
-      <HomeProductsComponent title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="special-offer" data={data.products} />
+      <HomeProductsComponent discount={true} title={"This Week’s Special Offers"} subTitle="Don’t Miss Out — Limited-Time Deals Just for You!" link="special-offer" data={data.products} />
 
       {/* First Banner */}
       <Banner
