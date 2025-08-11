@@ -14,6 +14,7 @@ interface ProductCardProps {
     images?: string[] | '/SliderSection/mini.png';
     isFeatured?: boolean;
     available?: boolean;
+    isDiscounted?: boolean
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -26,14 +27,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
     images,
     isFeatured,
     available,
+    isDiscounted
 }) => {
-    const [isDiscount] = useState(true);
+    const [isDiscount] = useState(isDiscounted);
     const [discount] = useState(7);
 
     const discountedPrice = price - price * (discount / 100);
 
     return (
-        <div className="max-w-[355px] w-[260px] md:w-[300px] h-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
+        <div className="max-w-[355px] w-[260px] md:w-[210px] lg:w-[300px] h-max-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
             {/* Discount badge */}
             {isDiscount && (
                 <div className="absolute bg-red-600 text-white px-2 rounded-tl-[10px] w-[97px] h-[27px] flex items-center justify-center text-sm font-medium">
@@ -42,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             )}
 
             {/* Product Image */}
-            <div className="h-[200px] flex overflow-hidden rounded-t-[10px]">
+            <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
                 <Image
                     src={
                         // images?.[0] ||
@@ -56,27 +58,25 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </div>
 
             {/* Info */}
-            <div className="mt-3 flex flex-col p-2">
-                <h2 className="text-lg flex justify-between font-medium">
-                    {name}
-                    {isDiscount && (
-                        <span className="font-[400] text-gray-400">
-                            Rs. <span className="line-through">{price}</span>
-                        </span>
+            <div className="p-2">
+                <div className="flex justify-between items-center text-sm font-medium">
+                    <span className="truncate">{name}</span>
+                    {isDiscount ? (
+                        <span className="text-gray-400 line-through">Rs. {price}</span>
+                    ) : (
+                        <span className="font-semibold">Rs. {price}</span>
                     )}
-                </h2>
-
-                <div className="mt-2 flex justify-end">
-                    <span className="text-xl font-medium">
-                        Rs. {isDiscount ? discountedPrice.toFixed(2) : price}
-                    </span>
                 </div>
 
-                <Button
-                    className="mt-2 bg-[#8C1C32] rounded-[10px] px-4 py-2 text-white hover:bg-[#a1263d] transition
-                    cursor-pointer
-                    "
-                >
+                {/* Price (discounted if applicable) */}
+                {isDiscount && (
+                    <div className="text-right font-semibold">
+                        Rs. {discountedPrice.toFixed(2)}
+                    </div>
+                )}
+
+                {/* Button */}
+                <Button className="mt-2 w-full bg-[#8C1C32] rounded-[10px] px-4 py-2 text-white hover:bg-[#a1263d] transition cursor-pointer">
                     Add to cart
                 </Button>
             </div>
@@ -84,4 +84,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
     );
 };
 
-export default ProductCard;
+export default React.memo(ProductCard);

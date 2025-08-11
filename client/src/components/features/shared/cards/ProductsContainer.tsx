@@ -9,18 +9,19 @@ export interface Product {
     id: string;
     name: string;
     description: string;
-    price: string | number; // if you want to treat price as a number, change this to number
-    images: string[]; // if images are objects, you can update this accordingly
+    price: string | number;
+    images: string[];
     tags: string[];
     available: boolean;
     isFeatured: boolean;
-    createdAt: string; // or Date if parsed
-    categoryId: string |null;
+    createdAt: string;
+    categoryId: string | null;
+    discount?: string
 }
 interface IProps {
     title: string
     subTitle: string
-    link: string
+    link?: string
     data: Product[];
 }
 
@@ -34,7 +35,7 @@ const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <h1 className="text-xl sm:text-2xl font-semibold">{title}</h1>
                     <Button
-                        onClick={() => router.push(`/category/${link}`)}
+                        onClick={() => router.push(`/${link}`)}
                         className="bg-[#CF294A] cursor-pointer w-full sm:w-[153px] rounded-[10px] px-4 py-2 text-base font-semibold text-white hover:bg-[#a1263d] transition"
                     >
                         View All
@@ -52,12 +53,13 @@ const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }
           grid-cols-1
           sm:grid-cols-2
           md:grid-cols-3
-          lg:grid-cols-4
+          xl:grid-cols-4
         "
                 >
                     {data.map((item, index) => (
                         <ProductCard
                             key={index}
+                            isDiscounted={false}
                             name={item.name}
                             price={item.price as number}
                             images={item.images}
@@ -70,4 +72,4 @@ const HomeProductsComponent: React.FC<IProps> = ({ title, subTitle, link, data }
     )
 }
 
-export default HomeProductsComponent
+export default React.memo(HomeProductsComponent)
