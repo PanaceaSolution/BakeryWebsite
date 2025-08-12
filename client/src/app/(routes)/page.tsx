@@ -1,4 +1,6 @@
 
+import { BillingForm } from "@/components/checkout/BillingForm";
+import CakeCustomizer from "@/components/features/customise/CakeCustomizer";
 import DeliveryInfoContainer from "@/components/features/deliveryinfo/DeliveryInfoContainer";
 import FaqAccordion from "@/components/features/faq/FAQAccordin";
 import Footer from "@/components/features/footer/Footer";
@@ -7,6 +9,10 @@ import HeroSection from "@/components/features/herosection/HeroSection";
 import InfoTiles from "@/components/features/infotiles/InfoTiles";
 import Banner from "@/components/features/shared/banner/Banner";
 import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
+
+
+
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
@@ -91,6 +97,8 @@ export default function Home() {
         <InfoTiles/>
        <DeliveryInfoContainer/>
         <FaqAccordion/>
+        <CakeCustomizer/>
+      <BillingForm/>
         <SubscribeSection/>
         <Footer/>
        
