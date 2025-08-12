@@ -1,9 +1,165 @@
-import React from 'react'
+import React from "react";
+import CategoryProductContainer from "@/components/features/shared/container/CategoryProductContainer";
+import { Product } from "@/types/CakeTypes";
 
-function page() {
+const data = {
+    products: [
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        {
+            id: "89b708ba-fe67-4f96-ade3-104e85691a7a",
+            name: "ORANGE",
+            description: "Black forest",
+            price: "200",
+            images: [],
+            tags: ["Cakes"],
+            available: true,
+            isFeatured: false,
+            createdAt: "2025-08-05T07:04:34.991Z",
+            categoryId: "b49c87ce-0418-4318-8fce-4becd5f442c6",
+        },
+        // ... more products
+    ],
+};
+
+function Page() {
+    const products: Product[] = data.products;
+
     return (
-        <div>page</div>
-    )
+        <React.Fragment>
+            <CategoryProductContainer data={products} />
+        </React.Fragment>
+    );
 }
 
-export default page
+export default Page;
