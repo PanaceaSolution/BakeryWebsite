@@ -8,6 +8,7 @@ import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import HomeProductsComponent from "@/components/features/shared/cards/ProductsContainer";
+import Footer from "@/components/features/footer/Footer";
 
 //dynamically data will be fetched here
 const data = {
