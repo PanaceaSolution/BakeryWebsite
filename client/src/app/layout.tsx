@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Provider from "@/utils/providers";
+import NavBar from "@/components/features/shared/NavBar";
+import SliderSection from "@/components/features/home/Sliders/SliderSection";
+import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
+import Footer from "@/components/features/footer/Footer";
+import HeroSection from "@/components/features/herosection/HeroSection";
+import DynamicBanner from "@/components/features/shared/banner/DynamicBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,12 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
+          <NavBar />
+          <DynamicBanner />
+          <SliderSection />
           {children}
+          <SubscribeSection />
+          <Footer />
         </Provider>
       </body>
     </html>
