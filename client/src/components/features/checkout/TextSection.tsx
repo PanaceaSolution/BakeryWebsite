@@ -1,5 +1,5 @@
 import React from 'react'
-import TextBlock from '../features/shared/textblock/TextBlock'
+import TextBlock from '../shared/textblock/TextBlock'
 import WhatsAppButton from './WhatsAppButton'
 
 const TextSection: React.FC = () => {

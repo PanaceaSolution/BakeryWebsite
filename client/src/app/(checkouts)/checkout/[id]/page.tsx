@@ -1,5 +1,5 @@
-import { BillingForm } from '@/components/checkout/BillingForm'
-import TextSection from '@/components/checkout/TextSection'
+import { BillingForm } from '@/components/features/checkout/BillingForm'
+import TextSection from '@/components/features/checkout/TextSection'
 import React from 'react'
 
 function page() {
