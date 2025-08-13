@@ -7,17 +7,18 @@ const PUBLIC_URL = process.env.NEXT_PUBLIC_API
 
 const getToken = () => {
     const token = Cookies.get("access_token");
-    console.log("token", token)
+    // console.log("token", token)
     return token
 }
-const apiInstance = axios.create({
+
+const ApiInstance = axios.create({
 
     baseURL: PUBLIC_URL,
 
 })
 
 // Add a request interceptor
-apiInstance.interceptors.request.use(function (config) {
+ApiInstance.interceptors.request.use(function (config) {
     config.headers.Authorization = `Bearer ${getToken()}`
     return config;
 }, function (error) {
@@ -26,4 +27,4 @@ apiInstance.interceptors.request.use(function (config) {
 
 
 
-export default apiInstance
+export default ApiInstance

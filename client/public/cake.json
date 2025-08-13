@@ -1,0 +1,16 @@
+{
+    "id": "cake001",
+    "name": "Chocolate Truffle Cake",
+    "description": "Rich and moist chocolate cake layered with dark chocolate ganache.",
+    "price": 1200,
+    "category": "Chocolate cake",
+    "tags": ["truffle", "dark chocolate", "rich"],
+    "images": [
+      "https://example.com/images/cakes/chocolate_truffle_1.jpg",
+      "https://example.com/images/cakes/chocolate_truffle_2.jpg"
+    ],
+    "isFeatured": true,
+    "available": true,
+    "createdAt": "2025-07-01T08:00:00Z"
+  }
+
