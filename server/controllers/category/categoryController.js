@@ -44,7 +44,11 @@ export const createCategory = async (req, res) => {
 
 export const findAllCategory = async (req, res) => {
   try {
-    const allCategory = await prisma.category.findMany();
+    const allCategory = await prisma.category.findMany({
+      include: {
+        products: true,
+      },
+    });
 
     if (allCategory.length === 0) {
       return res.status(404).json({
