@@ -1,5 +1,5 @@
 
-import { BillingForm } from "@/components/checkout/BillingForm";
+
 import CakeCustomizer from "@/components/features/customise/CakeCustomizer";
 import DeliveryInfoContainer from "@/components/features/deliveryinfo/DeliveryInfoContainer";
 import FaqAccordion from "@/components/features/faq/FAQAccordin";
@@ -98,7 +98,7 @@ export default function Home() {
        <DeliveryInfoContainer/>
         <FaqAccordion/>
         <CakeCustomizer/>
-      <BillingForm/>
+     
         <SubscribeSection/>
         <Footer/>
        
