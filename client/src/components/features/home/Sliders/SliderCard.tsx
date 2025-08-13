@@ -7,10 +7,11 @@ interface SliderCardProps {
   id: string | number;
   name: string;
   price?: number;
-  image: string;
+  categoryImage: string;
+  slug:string
 }
 
-const SliderCard: React.FC<SliderCardProps> = ({ id, name, price, image }) => {
+const SliderCard: React.FC<SliderCardProps> = ({ id, name, price, categoryImage ,slug}) => {
   return (
     <div
       className="w-[140px] h-[180px] sm:w-[160px] sm:h-[200px] md:w-[188px] md:h-[222px] p-2 text-center cursor-pointer"
@@ -21,8 +22,8 @@ const SliderCard: React.FC<SliderCardProps> = ({ id, name, price, image }) => {
         {/* Inner Circle */}
         <div className="w-[120px] h-[120px] sm:w-[140px] sm:h-[140px] md:w-[169px] md:h-[169px] mx-auto overflow-hidden rounded-full bg-white relative group">
           <Image
-            src={image}
-            alt={name}
+            src={`/${categoryImage}`}
+            alt={`${name} category image`}
             fill
             className="object-cover rounded-full transition-transform duration-500 ease-in-out group-hover:scale-110"
             sizes="(max-width: 640px) 120px, (max-width: 768px) 140px, 169px"
@@ -44,4 +45,4 @@ const SliderCard: React.FC<SliderCardProps> = ({ id, name, price, image }) => {
   );
 };
 
-export default memo(SliderCard);
+export default React.memo(SliderCard);

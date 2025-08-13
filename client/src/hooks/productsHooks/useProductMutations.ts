@@ -1,5 +1,4 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Product } from "@/types/CakeTypes";
 import { AddProduct, DelProduct, UpdateProduct } from "@/utils/api/CakesApi";
 import toast from "react-hot-toast";
 

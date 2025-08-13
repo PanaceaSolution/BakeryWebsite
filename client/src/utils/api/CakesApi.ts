@@ -16,7 +16,7 @@ export const GetAllProducts = async () => {
 
 export const GetProductsByCategory = async (slug: string) => {
     try {
-        const response = await ApiInstance.get(`/product/category/${slug}`);
+        const response = await ApiInstance.get(`/products/category/${slug}`);
         return response.data;
     } catch (error: any) {
         throw error?.response?.data;

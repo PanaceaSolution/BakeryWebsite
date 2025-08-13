@@ -11,7 +11,7 @@ interface ProductCardProps {
     price: number;
     category?: string;
     tags?: string[];
-    images?: string[] | '/SliderSection/mini.png';
+    images?: string[];
     isFeatured?: boolean;
     available?: boolean;
     isDiscounted?: boolean
@@ -45,16 +45,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
             {/* Product Image */}
             <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
-                <Image
-                    src={
-                        // images?.[0] ||
-                        "/SliderSection/mini.png"
-                    }
-                    alt={name}
-                    width={355}
-                    height={200}
-                    className="h-full object-contain min-w-full"
-                />
+                {images && images.length > 0 ? (
+                    <Image
+                        src={images[0]}
+                        alt={name}
+                        width={355}
+                        height={200}
+                        className="h-full object-contain min-w-full"
+                    />
+                ) : (
+                    <div className="flex items-center justify-center w-full h-full bg-gray-100 text-gray-700 font-semibold">
+                        {name}
+                    </div>
+                )}
             </div>
 
             {/* Info */}
