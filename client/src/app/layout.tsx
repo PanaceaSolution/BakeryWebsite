@@ -35,8 +35,11 @@ export default function RootLayout({
                 <Provider>
                     <NavBar />
                     {children}
+
                     <SubscribeSection />
-                    <Footer />
+                    <div id="about-us">
+                        <Footer />
+                    </div>
                 </Provider>
             </body>
         </html>
