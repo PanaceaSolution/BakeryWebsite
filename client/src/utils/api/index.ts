@@ -7,7 +7,7 @@ const PUBLIC_URL = process.env.NEXT_PUBLIC_API
 
 const getToken = () => {
     const token = Cookies.get("access_token");
-    console.log("token", token)
+    // console.log("token", token)
     return token
 }
 

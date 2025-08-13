@@ -13,7 +13,7 @@ function NavBar() {
         { label: "Customize your Cake", url: "/#customize" },
         { label: "Bakery Items", url: "/bakery-items" },
         { label: "FAQs", url: "/#faqs" },
-        { label: "Contact Us", url: "/#contact" },
+        { label: "Contact Us", url: "/#about-us" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);

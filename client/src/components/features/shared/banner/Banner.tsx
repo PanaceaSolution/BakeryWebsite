@@ -51,7 +51,7 @@ const Banner: React.FC<BannerProps> = ({
 
           {/* Button */}
           <Link
-            href={buttonLink}
+            href={`${buttonLink}`}
             className="w-[160px] sm:w-[180px] md:w-[200px] xl:w-[244px] h-[40px] md:h-[44px] px-[10px] py-[10px] bg-[#D82B5D] text-white text-center rounded-[10px] font-medium hover:bg-[#b02149] transition-colors flex items-center justify-center text-[14px] md:text-[16px]"
           >
             {buttonText}
