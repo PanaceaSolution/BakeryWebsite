@@ -3,9 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import useCartStore from "@/store/cartStore";
 
 interface ProductCardProps {
-    id?: string | number;
+    id?: string | number ;
     name: string;
     description?: string;
     price: number;
@@ -14,7 +15,7 @@ interface ProductCardProps {
     images?: string[];
     isFeatured?: boolean;
     available?: boolean;
-    isDiscounted?: boolean
+    isDiscounted?: boolean;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -34,8 +35,18 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
     const discountedPrice = price - price * (discount / 100);
 
+    const addToCart = useCartStore((state) => state.addToCart);
+    const handleAddToCart = () => {
+        addToCart({
+            id,
+            name,
+            price: isDiscount ? discountedPrice : price,
+            images: images || []
+        });
+    };
+
     return (
-        <div className="max-w-[355px] w-[260px] md:w-[210px] lg:w-[300px] h-max-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
+        <div className="max-w-[355px] w-full sm:w-[260px] md:w-[240px] lg:w-[300px] h-max-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
             {/* Discount badge */}
             {isDiscount && (
                 <div className="absolute bg-red-600 text-white px-2 rounded-tl-[10px] w-[97px] h-[27px] flex items-center justify-center text-sm font-medium">
@@ -44,25 +55,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
             )}
 
             {/* Product Image */}
-            <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
+            <div className="h-[200px] w-full flex overflow-hidden rounded-t-[10px] p-2">
                 {images && images.length > 0 ? (
                     <Image
                         src={images[0]}
                         alt={name}
                         width={355}
                         height={200}
-                        className="h-full object-contain min-w-full"
+                        className="h-full w-full object-contain"
                     />
                 ) : (
-                        <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
-                            <Image
-                                src='/assets/SliderSection/baby.png' // path in public folder
-                                alt={name}
-                                width={355}
-                                height={200}
-                                className="h-full object-contain min-w-full"
-                            />
-                        </div>
+                    <Image
+                        src='/assets/SliderSection/baby.png' // fallback image
+                        alt={name}
+                        width={355}
+                        height={200}
+                        className="h-full w-full object-contain"
+                    />
                 )}
             </div>
 
@@ -85,7 +94,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
                 )}
 
                 {/* Button */}
-                <Button className="mt-2 w-full bg-[#8C1C32] rounded-[10px] px-4 py-2 text-white hover:bg-[#a1263d] transition cursor-pointer">
+                <Button
+                    onClick={handleAddToCart}
+                    className="mt-2 w-full bg-[#8C1C32] rounded-[10px] px-4 py-2 text-white hover:bg-[#a1263d] transition cursor-pointer"
+                >
                     Add to cart
                 </Button>
             </div>

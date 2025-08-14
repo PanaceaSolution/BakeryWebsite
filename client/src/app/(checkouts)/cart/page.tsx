@@ -1,3 +1,4 @@
+import CartPage from '@/components/features/cart/Cart'
 import TextBlock from '@/components/features/shared/textblock/TextBlock'
 import React from 'react'
 
@@ -12,6 +13,8 @@ function page() {
           />
         </div>
       </div>
+
+      <CartPage />
     </div>
   )
 }

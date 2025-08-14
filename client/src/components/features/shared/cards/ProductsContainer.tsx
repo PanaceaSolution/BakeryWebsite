@@ -29,23 +29,23 @@ interface IProps {
 }
 
 const ProductSkeleton = () => (
-    <div className="max-w-[355px] w-[260px] md:w-[210px] lg:w-[300px] h-max-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
-        {/* Image skeleton */}
-        <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
-            <Skeleton className="w-full h-full object-contain rounded" />
-        </div>
-
-        {/* Info skeleton */}
-        <div className="p-2">
-            <div className="flex justify-between items-center">
-                <Skeleton className="h-4 w-3/4 rounded" /> {/* Name */}
-                <Skeleton className="h-4 w-1/4 rounded" /> {/* Price */}
-            </div>
-
-            {/* Button skeleton */}
-            <Skeleton className="mt-2 w-full h-10 rounded-[10px]" />
-        </div>
+  <div className="max-w-[355px] w-[260px] md:w-[210px] lg:w-[300px] h-max-[364px] rounded-[10px] shadow-lg relative bg-white tracking-wide">
+    {/* Image skeleton */}
+    <div className="h-[200px] md:w-[200px] lg:w-full flex overflow-hidden rounded-t-[10px] p-2">
+      <Skeleton className="w-full h-full object-contain rounded" />
     </div>
+
+    {/* Info skeleton */}
+    <div className="p-2">
+      <div className="flex justify-between items-center">
+        <Skeleton className="h-4 w-3/4 rounded" /> {/* Name */}
+        <Skeleton className="h-4 w-1/4 rounded" /> {/* Price */}
+      </div>
+
+      {/* Button skeleton */}
+      <Skeleton className="mt-2 w-full h-10 rounded-[10px]" />
+    </div>
+  </div>
 );
 
 
@@ -84,30 +84,38 @@ const HomeProductsComponent: React.FC<IProps> = ({
 
       <div className="flex justify-center md:justify-between items-center content-center">
         <div className="
-          grid gap-22 
-          grid-cols-1
-          sm:grid-cols-2
-          md:grid-cols-3
-          xl:grid-cols-4
-        ">
-          {isLoading
-            ? Array.from({ length: totalSlots }).map((_, i) => <ProductSkeleton key={i} />)
-            : (
-              <>
-                {productsToShow.map(item => (
+  w-full
+  grid
+  gap-6
+  md:gap-22
+  grid-cols-1
+  sm:grid-cols-2
+  md:grid-cols-3
+  xl:grid-cols-4
+  justify-items-center
+">
+          {isLoading ? (
+            Array.from({ length: totalSlots }).map((_, i) => (
+              <ProductSkeleton key={i} />
+            ))
+          ) : (
+            <>
+              {productsToShow.length > 0 ? (
+                productsToShow.map(item => (
                   <ProductCard
                     key={item.id}
                     isDiscounted={discount}
                     name={item.name}
                     price={Number(item.price)}
                     images={item.images}
+                    id={item.id}
                   />
-                ))}
-                {Array.from({ length: skeletonCount }).map((_, i) => (
-                  <ProductSkeleton key={`skeleton-${i}`} />
-                ))}
-              </>
-            )}
+                ))
+              ) : (
+                <p className="col-span-full text-center text-gray-500">No products available</p>
+              )}
+            </>
+          )}
         </div>
       </div>
     </div>

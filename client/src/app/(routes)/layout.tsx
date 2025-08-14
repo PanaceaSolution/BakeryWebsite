@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import Provider from "@/utils/providers";
 import SliderSection from "@/components/features/home/Sliders/SliderSection";
 import DynamicBanner from "@/components/features/shared/banner/DynamicBanner";
+import SubscribeSection from "@/components/features/subscribe/SubscribeSection";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,9 @@ export default function RootLayout({
           <DynamicBanner />
           <SliderSection />
           {children}
+
+          <SubscribeSection />
+
         </Provider>
       </body>
     </html>

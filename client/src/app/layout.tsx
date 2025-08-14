@@ -36,7 +36,6 @@ export default function RootLayout({
                     <NavBar />
                     {children}
 
-                    <SubscribeSection />
                     <div id="about-us">
                         <Footer />
                     </div>

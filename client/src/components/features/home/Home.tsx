@@ -5,6 +5,7 @@ import { useAllProducts } from "@/hooks/productsHooks/useProductQueries";
 import { useGetCategories } from "@/hooks/categoryHooks/useCategoryQueries";
 import { Product } from "@/types/CakeTypes";
 import { useEffect } from "react";
+import CakeCustomizer from "../customise/CakeCustomizer";
 
 export default function Home() {
     const { data: allProductsData, isLoading: isProductsLoading } = useAllProducts();
@@ -154,6 +155,11 @@ export default function Home() {
                 buttonText="Create Your Cake Now"
                 buttonLink="#customize"
             />
+
+            <div id="customize">
+                <CakeCustomizer />
+            </div>
+
             <Banner
                 image="/assets/HeroSection/eight.png"
                 heading="Delivered with Love & Care"

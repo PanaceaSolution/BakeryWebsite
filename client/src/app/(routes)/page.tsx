@@ -1,4 +1,3 @@
-import CakeCustomizer from '@/components/features/customise/CakeCustomizer'
 import DeliveryInfoContainer from '@/components/features/deliveryinfo/DeliveryInfoContainer'
 import FaqAccordion from '@/components/features/faq/FAQAccordin'
 import Home from '@/components/features/home/Home'
@@ -19,9 +18,6 @@ const page = () => {
       </div>
 
 
-      <div id="customize">
-        <CakeCustomizer />
-      </div>
     </>
   )
 }
