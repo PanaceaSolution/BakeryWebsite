@@ -25,16 +25,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
+        <>
+            <CartBanner image='/Cart.png' heading='Ready to Check Out?' subtext='Let’s make your celebration extra special—just one step away!' />
 
-        <html lang="en">
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
-                <CartBanner image='/Cart.png' heading='Ready to Check Out?' subtext='Let’s make your celebration extra special—just one step away!' />
-
-                {children}
-                <SubscribeSection />
-            </body>
-        </html>
+            {children}
+            <SubscribeSection />
+        </>
     );
 }

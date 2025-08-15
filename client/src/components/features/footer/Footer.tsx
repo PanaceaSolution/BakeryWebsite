@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
   </div>
 
   {/* Footer bottom text */}
-  <div className="lg:col-span-4 flex flex-col items-center mt-12 w-full">
+  <div className="lg:col-span-4 flex flex-col items-center w-full">
     <FooterBottom />
   </div>
 

@@ -64,7 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
 
               <Button
                 asChild
-                className="w-[244px] h-[44px] rounded-[10px] px-[10px] py-[10px] border border-white bg-transparent text-white font-medium text-center hover:bg-white hover:text-black transition-colors flex items-center justify-center"
+                className="w-[244px] h-[44px] rounded-[10px] px-[10px] py-[10px] border border-white bg-transparent text-white font-medium text-center hover:bg-[#8C1C32] hover:text-white hover:border-none transition-colors flex items-center justify-center"
               >
                 <Link href={data.secondaryBtn.link}>
                   {data.secondaryBtn.text}
@@ -75,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
         </div>
       </section>
 
-      <div ref={customizeRef} id="customize" className="mt-20" />
+      <div ref={customizeRef} className="mt-20" />
     </>
   )
 }

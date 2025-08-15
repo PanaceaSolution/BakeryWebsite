@@ -15,21 +15,24 @@ const CheckOut = () => {
 
     return (
         <div className="flex flex-col md:flex-row mx-9 justify-between mb-16 gap-6">
-            <BillingForm />
+            <div className='grid col-span-1 md:grid-cols-2 gap-6 w-full justify-center'>
 
-            <CheckoutCard
-                items={cart.map(item => ({
-                    name: item.name,
-                    price: item.price,
-                    quantity: item.quantity || 1
-                }))}
-                discount={0}
-                shippingOptions={[
-                    { label: "Inside Ringroad KTM", price: 50 },
-                    { label: "Outside Ringroad / Bhaktapur / Lalitpur", price: 100 },
-                ]}
-                onCheckout={checkout}
-            />
+                <BillingForm />
+
+                <CheckoutCard
+                    items={cart.map(item => ({
+                        name: item.name,
+                        price: item.price,
+                        quantity: item.quantity || 1
+                    }))}
+                    discount={0}
+                    shippingOptions={[
+                        { label: "Inside Ringroad KTM", price: 50 },
+                        { label: "Outside Ringroad / Bhaktapur / Lalitpur", price: 100 },
+                    ]}
+                    onCheckout={checkout}
+                />
+            </div>
         </div>
     )
 }

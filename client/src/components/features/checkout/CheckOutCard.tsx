@@ -32,7 +32,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ items, discount, shippingOp
     }, [subtotal, discount, selectedShipping]);
 
     return (
-        <div className="border rounded-lg p-6 shadow-md bg-white h-[514px]">
+        <div className="border rounded-lg p-6 shadow-md bg-white h-[400px] h-max-auto">
             <h2 className="font-bold text-lg mb-4">Your Order</h2>
             <table className="w-full mb-4">
                 <thead className="border-b">
@@ -64,7 +64,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ items, discount, shippingOp
                 {shippingOptions.map((option, idx) => (
                     <label key={idx} className="flex justify-between items-center mb-1 cursor-pointer">
                         <span>{option.label}</span>
-                        <span>
+                        <span className="text-[#8C1C32]">
                             Rs {option.price}{" "}
                             <input
                                 type="radio"
@@ -80,7 +80,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({ items, discount, shippingOp
 
             <div className="flex justify-between font-bold text-lg mb-4">
                 <span>Total</span>
-                <span>Rs {total}</span>
+                <span className="text-[#8C1C32]">Rs {total}</span>
             </div>
 
             

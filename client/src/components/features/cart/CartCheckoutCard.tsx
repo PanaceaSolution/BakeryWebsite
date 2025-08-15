@@ -21,7 +21,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({
     const total = subtotal - discount + shippingOptions[selectedShipping]?.price
 
     return (
-        <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md border">
+        <div className="bg-white shadow-md rounded-lg p-6 w-full  border">
             <h2 className="text-lg font-bold mb-4">CARD TOTAL</h2>
 
             {/* Subtotal */}
@@ -64,7 +64,7 @@ const CheckoutCard: React.FC<CheckoutCardProps> = ({
             {/* Total */}
             <div className="flex justify-between text-lg font-bold mb-4">
                 <span>Total</span>
-                <span>Rs {total}</span>
+                <span className='text-[#861c31]'>Rs {total}</span>
             </div>
 
             <Button

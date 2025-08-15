@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
+*{
+  scroll-behavior: smooth;
+}
 
 .hide-scrollbar::-webkit-scrollbar {
   display: none;

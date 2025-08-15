@@ -71,13 +71,19 @@ const HomeProductsComponent: React.FC<IProps> = ({
       <div className="flex flex-col gap-2 w-full">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <h1 className="text-xl sm:text-2xl font-semibold">{title}</h1>
-          <Button
-            onClick={() => link && router.push(`/${link}`)}
-            className="bg-[#CF294A] cursor-pointer w-full sm:w-[153px] rounded-[10px] px-4 py-2 text-base font-semibold text-white hover:bg-[#a1263d] transition"
-            disabled={isLoading}
-          >
-            View All
-          </Button>
+          <div className='pt-8'>
+
+            <Button
+              onClick={() => link && router.push(`/${link}`)}
+              className="bg-[#CF294A] cursor-pointer w-full sm:w-[153px] rounded-[10px]
+            px-4 py-2 text-base font-semibold text-white hover:bg-[#a1263d]
+            transition
+            "
+              disabled={isLoading}
+            >
+              View All
+            </Button>
+          </div>
         </div>
         <h2 className="text-sm sm:text-base font-semibold text-gray-700">{subTitle}</h2>
       </div>

@@ -133,13 +133,18 @@ export default function Home() {
             />
 
             {/* Bakery Items Section */}
-            <Banner
-                image="/assets/HeroSection/six.png"
-                heading="Your Daily Dose of Delicious"
-                subtext="Craving a quick bite or a cozy treat? Our bakery items have something for everyone."
-                buttonText="Order Fresh Bakes"
-                buttonLink="/category/bakery-items-cakes"
-            />
+            <div id="bakery-items">
+
+                <Banner
+                    image="/assets/HeroSection/six.png"
+                    heading="Your Daily Dose of Delicious"
+                    subtext="Craving a quick bite or a cozy treat? Our bakery items have something for everyone."
+                    buttonText="Order Fresh Bakes"
+                    buttonLink="/category/bakery-items-cakes"
+                />
+
+            </div>
+
             <HomeProductsComponent
                 title="Bakery Items - Baked to Perfection"
                 subTitle="Where tradition meets taste — discover our premium bakery range crafted with love and skill."
@@ -156,7 +161,7 @@ export default function Home() {
                 buttonLink="#customize"
             />
 
-            <div id="customize">
+            <div id="custom-cake">
                 <CakeCustomizer />
             </div>
 

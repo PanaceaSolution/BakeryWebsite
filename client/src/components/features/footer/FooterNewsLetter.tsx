@@ -7,7 +7,7 @@ const FooterNewsletter: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col gap-4 lg:w-[350px] w-full">
+    <div className="flex flex-col gap-4 lg:w-max-[350px] w-full">
       {/* Heading */}
       <h4 className="font-[600] font-poppins text-[20px] sm:text-[24px] leading-[28px] text-[#8B1732]">
         Stay in the Loop
@@ -22,19 +22,17 @@ const FooterNewsletter: React.FC = () => {
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-[612px] mt-2 flex flex-col sm:flex-row gap-2 sm:gap-0 relative"
+        className="w-full max-w-[612px] mt-2 flex flex-col sm:flex-row gap-2 sm:gap-0"
       >
-        <div className="flex items-center w-full h-[42px] border border-gray-300 rounded-[20px] px-[10px] bg-white">
-          <input
-            type="email"
-            placeholder="Enter Your Email Address"
-            className="flex-1 h-full text-[14px] border-none focus:outline-none bg-transparent"
-            required
-          />
-        </div>
+        <input
+          type="email"
+          placeholder="Enter Your Email Address"
+          className="flex-1 h-full text-[14px] border rounded-2xl px-2 focus:outline-none bg-transparent"
+          required
+        />
         <button
           type="submit"
-          className="sm:absolute sm:right-[1px] sm:top-1/2 sm:transform sm:-translate-y-1/2 bg-[#8C1C32] text-white w-full sm:w-[146px] h-[42px] text-[14px] rounded-[20px] px-[10px] hover:bg-[#731628] transition-colors shadow-md"
+          className=" bg-[#8C1C32] text-white w-full sm:w-[120px] h-[42px] text-[14px] rounded-[20px] px-[10px] hover:bg-[#731628] transition-colors shadow-md"
         >
           Subscribe
         </button>

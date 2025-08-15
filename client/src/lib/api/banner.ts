@@ -18,7 +18,7 @@ export const dummyBanners: Record<string, BannerData> = {
     image: '/assets/HeroSection/one.png',
     heading: 'Bake Your Dreams Into Reality',
     subtext: 'Find the perfect treat for every celebration — made with love, baked to perfection.',
-    primaryBtn: { text: 'Customize your Cake', link: '#customize' },
+    primaryBtn: { text: 'Customize your Cake', link: '#custom-cake' },
     secondaryBtn: { text: 'Order Now', link: '/' },
   },
   'birthday-cake': {

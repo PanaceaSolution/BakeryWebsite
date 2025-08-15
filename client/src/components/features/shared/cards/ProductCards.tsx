@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import useCartStore from "@/store/cartStore";
 
 interface ProductCardProps {
-    id?: string | number ;
+    id?: string | number;
     name: string;
     description?: string;
     price: number;

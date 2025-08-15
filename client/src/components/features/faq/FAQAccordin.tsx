@@ -71,11 +71,11 @@ const FaqAccordion = () => {
               >
                 {faq.question}
               </span>
-              <div className="ml-2 w-8 h-8 rounded-full  flex items-center justify-center">
+              <div className="ml-2 h-8 rounded-full  flex items-center justify-center">
                 {isOpen ? (
-                  <FaChevronUp className="text-[#8C1C32] text-sm" />
+                  <FaChevronUp className="text-white text-sm rounded- w-[53px] h-[53px] p-4 bg-[#8C1C32] rounded-full" />
                 ) : (
-                  <FaChevronDown className="text-[#0000008C] text-sm" />
+                    <FaChevronDown className="text-[#0000008C] text-sm  w-[53px] h-[53px] p-4 rounded-ful" />
                 )}
               </div>
             </button>

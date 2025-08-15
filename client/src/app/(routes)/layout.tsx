@@ -28,19 +28,16 @@ export default function RootLayout({
 }>) {
   return (
 
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Provider>
-          <DynamicBanner />
-          <SliderSection />
-          {children}
+    <>
 
-          <SubscribeSection />
+      <Provider>
+        <DynamicBanner />
+        <SliderSection />
+        {children}
 
-        </Provider>
-      </body>
-    </html>
+        <SubscribeSection />
+
+      </Provider>
+    </>
   );
 }

@@ -10,7 +10,7 @@ const FooterLinks: React.FC = () => {
         className="
           font-poppins font-bold
           text-[#000000]
-          
+          mb-3
           text-[16px] sm:text-[18px] md:text-[20px]
           leading-[100%]
           tracking-normal 
@@ -31,14 +31,14 @@ const FooterLinks: React.FC = () => {
       >
         {[
           { href: '/', label: 'Home' },
-          { href: '/about', label: 'About Us' },
-          { href: '/customize', label: 'Customize your Cake' },
-          { href: '/shop', label: 'Shop / Order Online' },
-          { href: '/bakery-items', label: 'Bakery Items' },
-          { href: '/faqs', label: 'FAQs' },
-          { href: '/contact', label: 'Contact Us' },
-        ].map(({ href, label }) => (
-          <li key={href}>
+          { href: '#about-us', label: 'About Us' },
+          { href: '#custom-cake', label: 'Customize your Cake' },
+          { href: '/', label: 'Shop / Order Online' },
+          { href: '#bakery-items', label: 'Bakery Items' },
+          { href: '#faqs', label: 'FAQs' },
+          { href: '#about-us', label: 'Contact Us' },
+        ].map(({ href, label },index) => (
+          <li key={index}>
             <Link
               href={href}
               className="

@@ -13,7 +13,7 @@ const page = () => {
       <InfoTiles />
       <DeliveryInfoContainer />
 
-      <div id="customize">
+      <div id="faqs">
         <FaqAccordion />
       </div>
 

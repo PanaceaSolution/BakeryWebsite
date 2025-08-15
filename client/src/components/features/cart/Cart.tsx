@@ -26,8 +26,8 @@ export default function CartPage() {
 
 
     return (
-        <div className="p-6 flex flex-col lg:flex-row gap-6">
-            <div className="flex-1">
+        <div className="p-6 flex flex-col lg:flex-row gap-6 mb-26">
+            <div className="flex-1 w-full max-w-[973px]">
                 <CartCard
                     items={cart.map(item => ({
                         id: String(item.id),
@@ -41,7 +41,7 @@ export default function CartPage() {
                 />
             </div>
 
-            <div className="w-full lg:w-[350px]">
+            <div className="w-full lg:w-[600px] max-w-[741px]">
                 <CheckoutCard
                     subtotal={subtotal}
                     discount={0}

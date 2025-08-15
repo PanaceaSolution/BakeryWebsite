@@ -9,12 +9,12 @@ import { FiMenu, FiSearch, FiShoppingCart, FiUser, FiX } from "react-icons/fi";
 function NavBar() {
     const navLinks = [
         { label: "Home", url: "/" },
-        { label: "About Us", url: "/#about-us" },
-        { label: "Shop", url: "/shop" },
-        { label: "Customize your Cake", url: "/#customize" },
-        { label: "Bakery Items", url: "/bakery-items" },
-        { label: "FAQs", url: "/#faqs" },
-        { label: "Contact Us", url: "/#about-us" },
+        { label: "About Us", url: "#about-us" },
+        { label: "Shop", url: "/" },
+        { label: "Customize your Cake", url: "#custom-cake" },
+        { label: "Bakery Items", url: "#bakery-items" },
+        { label: "FAQs", url: "#faqs" },
+        { label: "Contact Us", url: "#about-us" },
     ];
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +52,7 @@ function NavBar() {
                 </nav>
 
                 {/* Icons */}
-                <div className="flex items-center justi-center gap-4 md:ml-2 md:gap-3">
+                <div className="flex items-center justi-center gap-4 md:ml-2 md:gap-5">
                     <FiSearch className="text-[#353147] text-xl cursor-pointer hover:text-[#8C1C32]" />
                     <Link href={"/cart"} className="relative">
                         <FiShoppingCart className="text-[#353147] text-xl cursor-pointer hover:text-[#8C1C32]" />
