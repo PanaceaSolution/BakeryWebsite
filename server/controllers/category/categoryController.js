@@ -1,10 +1,38 @@
 import prisma from "../../config/prismaClient.js";
 
 export const createCategory = async (req, res) => {
-  const { name, slug, image, categoryImage, description } = req.body;
-  if (!name || !slug || !image || !description) {
+  const { name, slug, description } = req.body;
+  // const categoryImage = req.file ? req.file.path : null;
+  console.log("controller started");
+  const categoryImage = req.files?.categoryImage
+    ? req.files.categoryImage[0].path
+    : null;
+  const cakeImage = req.files?.cakeImage ? req.files.cakeImage[0].path : null;
+  // const cakeImage = req.file ? req.file.path : null;
+  console.log("Category Image:", categoryImage);
+  if (!name || !slug || !description) {
     return res.status(400).json({
       message: "Please provide name, slug, and image of category",
+    });
+  }
+  // console.log("FILES:", req.files);
+  // console.log("BODY:", req.body);
+
+  let parsedDescription;
+
+  try {
+    parsedDescription = JSON.parse(description);
+    if (
+      typeof parsedDescription !== "object" ||
+      Array.isArray(parsedDescription)
+    ) {
+      return res.status(400).json({
+        message: "Description must be a valid JSON object",
+      });
+    }
+  } catch (err) {
+    return res.status(400).json({
+      message: "Description must be valid JSON",
     });
   }
 
@@ -26,9 +54,9 @@ export const createCategory = async (req, res) => {
       data: {
         name,
         slug,
-        image,
-        categoryImage,
-        description,
+        cakeImageUrl: cakeImage,
+        categoryImageUrl: categoryImage,
+        description: parsedDescription,
       },
     });
 

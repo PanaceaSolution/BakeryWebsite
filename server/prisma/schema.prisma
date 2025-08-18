@@ -33,9 +33,9 @@ model Category {
   id        String    @id @default(uuid())
   name      String
   slug      String
-  categoryImage   String
   description     Json
-  image     String
+  categoryImageUrl     String?
+  cakeImageUrl     String?
   createdAt DateTime  @default(now())
 
   products  Product[] // Relation: one-to-many
